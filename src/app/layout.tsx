@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import { Montserrat, Raleway } from 'next/font/google';
+import PromoProvider from '@/providers/PromoProvider';
+
 import './globals.css';
 
 const montserrat = Montserrat({
-  variable: '--font-montserrat',
+  variable: '--font-montserrat-sans',
   weight: ['400', '500', '600', '700']
 });
 
 const raleway = Raleway({
-  variable: '--font-raleway',
+  variable: '--font-raleway-sans',
   weight: '700'
 });
 
@@ -23,11 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='ru'>
       <body
-        className={`${montserrat.variable} antialiased `}
+        className={`${montserrat.variable} antialiased`}
       >
-        {children}
+        <PromoProvider initialSeconds={10}>
+          {children}
+        </PromoProvider>
       </body>
     </html>
   );
