@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --bg-color: #232829;
+  --text-color: #fff;
+  --accent: #FFBB00;
+  --additional: #81FE95;
+  --timer-bg-color: #1D5B43;
+
+  
+  --tariff-card-bg: #313637;
+  --hit-bg-color: #FD5656;
+
+
+
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-background: var(--bg-color);
+  --color-text: var( --text-color);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+
+
+  /* --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hit: var(--card-hit); */
+
+  /* --color-btn-bg: var(--btn-bg);
+  --color-btn-text: var(--btn-text);
+  --color-btn-bg-hover: var(--btn-bg-hover); */
+
+  --color-timer-bg: var(--timer-bg-color);
+  --color-old-price: var(--old-price);
+  --color-new-price: var(--new-price);
+
+  --font-montserrat: var(--font-montserrat-sans);
+  --font-gudea: var(--font-gudea-sans);
+
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 375px;
+
+  --animate-timer: timer 0.5s infinite;
+  
+  @keyframes timer {
+    0%,
+    100% {
+      scale: 1;
+    }
+
+    50% {
+      color: red;
+      scale: 1.5;
+    }
   }
 }
+ 
+
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-montserrat-sans), sans-serif;
 }

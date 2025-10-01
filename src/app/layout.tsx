@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat, Raleway } from 'next/font/google';
+import { Montserrat, Gudea } from 'next/font/google';
 import PromoProvider from '@/providers/PromoProvider';
 
 import './globals.css';
@@ -9,8 +9,8 @@ const montserrat = Montserrat({
   weight: ['400', '500', '600', '700']
 });
 
-const raleway = Raleway({
-  variable: '--font-raleway-sans',
+const gudea = Gudea({
+  variable: '--font-gudea-sans',
   weight: '700'
 });
 
@@ -27,11 +27,9 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body
-        className={`${montserrat.variable} antialiased`}
+        className={`${montserrat.variable} ${gudea.variable} antialiased`}
       >
-        <PromoProvider initialSeconds={10}>
-          {children}
-        </PromoProvider>
+        <PromoProvider>{children}</PromoProvider>
       </body>
     </html>
   );
