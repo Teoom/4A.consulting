@@ -4,37 +4,38 @@
 
   --bg-color: #232829;
   --text-color: #fff;
-  --accent: #FFBB00;
+  --accent: #FDB056;
   --additional: #81FE95;
   --timer-bg-color: #1D5B43;
 
-  
-  --tariff-card-bg: #313637;
+
+  --card-bg: #313637;
   --hit-bg-color: #FD5656;
 
+  --color-gradient: #232829;
 
-
+  --gray-800: #2D3233;
+  --gray-700: #484D4E;
+  --gray-600: #919191;
+  --gray-500: #9B9B9B;
+  --gray-400: #CDCDCD;
+  --gray-300: #DCDCDC;
 }
 
 @theme inline {
   --color-background: var(--bg-color);
-  --color-text: var( --text-color);
+  --color-timer-bg: var(--timer-bg-color);
+  --color-text: var(--text-color);
 
   --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
+  --color-additional: var(--additional);
 
-
-  /* --color-card-bg: var(--card-bg);
-  --color-card-border: var(--card-border);
-  --color-card-hit: var(--card-hit); */
-
-  /* --color-btn-bg: var(--btn-bg);
-  --color-btn-text: var(--btn-text);
-  --color-btn-bg-hover: var(--btn-bg-hover); */
-
-  --color-timer-bg: var(--timer-bg-color);
-  --color-old-price: var(--old-price);
-  --color-new-price: var(--new-price);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--gray-700);
+  --color-hit: var(--hit-bg-color);
+  --color-old-price: var(--gray-600);
+  --color-terms-text: var(--gray-400);
+  --color-garant-text: var(--gray-300);
 
   --font-montserrat: var(--font-montserrat-sans);
   --font-gudea: var(--font-gudea-sans);
@@ -42,9 +43,11 @@
   --breakpoint-xs: 320px;
   --breakpoint-sm: 375px;
 
+
   --animate-timer: timer 0.5s infinite;
-  
+
   @keyframes timer {
+
     0%,
     100% {
       scale: 1;
@@ -56,7 +59,7 @@
     }
   }
 }
- 
+
 
 
 body {

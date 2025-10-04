@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react';
 interface IPromoContext {
   promoTimerSeconds: number;
   isPromoActive: boolean;
+  setPromoActive: (value: boolean) => void;
 }
 
 export const PromoContext = createContext<

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useCallback } from 'react';
 import { PromoContext } from '@/hooks/usePromo';
 
 const PromoProvider = ({
@@ -10,28 +10,21 @@ const PromoProvider = ({
   children: React.ReactNode;
   initialSeconds?: number;
 }) => {
-  const [timer, setTimer] = useState(initialSeconds);
   const [isPromoActive, setIsPromoActive] = useState(true);
 
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 1) {
-          setIsPromoActive(false);
-          clearInterval(timerId);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+  const setPromoActive = useCallback(
+    (value: boolean) => setIsPromoActive(value),
+    []
+  );
 
-    return () => clearInterval(timerId);
-  }, []);
+  const contextValue = {
+    isPromoActive,
+    promoTimerSeconds: initialSeconds,
+    setPromoActive
+  };
 
   return (
-    <PromoContext.Provider
-      value={{ promoTimerSeconds: timer, isPromoActive }}
-    >
+    <PromoContext.Provider value={contextValue}>
       {children}
     </PromoContext.Provider>
   );
